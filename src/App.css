@@ -29,6 +29,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  margin-bottom: 2rem;
   
 }
 
@@ -79,3 +80,51 @@ body {
   cursor: pointer;
   transform: scale(1.1);
 }
+
+
+.contact{
+  
+  max-height: fit-content;
+  max-width: 500px;
+  margin:auto;
+  
+}
+.contact-heading {
+  background-color: thistle;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: .5rem;
+  border-right: solid 5px #05396b;
+}
+.contact-heading p {
+  margin: 0;
+}
+.contact-content {
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 475px;
+  margin: auto;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  padding-top: .5rem;
+
+}
+
+.contact-content > div 
+{
+  right: 0;
+  margin: auto;
+}
+.contact-content > p {
+  margin: 5px 0px;
+}
+
+.edit-contact > span {
+  margin: 3px;
+  padding: 8px;
+  right: 0;
+}
+
+
