@@ -14,6 +14,7 @@ export const Main = () => {
                 <span className="create">CREATE NEW <i><AiOutlinePlus/></i></span>
             </div>
             <Contact />
+            <Contact />
 
         </div>
     )

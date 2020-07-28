@@ -115,7 +115,6 @@ body {
 .contact-content > div 
 {
   right: 0;
-  margin: auto;
 }
 .contact-content > p {
   margin: 5px 0px;
@@ -125,6 +124,7 @@ body {
   margin: 3px;
   padding: 8px;
   right: 0;
+  float: right;
 }
 
 
