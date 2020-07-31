@@ -3,9 +3,9 @@ import AppReducer from "./AppReducer";
 
 const initialState = {
     contacts: [
-        {id: 1, name: "Manpreet Kaur", phone: ["6280769570","7042533587"], email:["kaurman2305@gail.com"]},
-        {id: 2, name: "Someone Singh", phone: ["6280769570",], email:["kaurman2305@gail.com","somone@yahoo.com"]},
-        {id: 3, name: "Guleria Bitch", phone: ["6280769570","7042533587"], email:["kaurman2305@gail.com", "blah@w.com"]}
+        {id: '1', name: "Manpreet Kaur", phone: ["6280769570","7042533587"], email:["kaurman2305@gail.com"]},
+        {id: '2', name: "Someone Singh", phone: ["6280769570",], email:["kaurman2305@gail.com","somone@yahoo.com"]},
+        {id: '3', name: "Guleria Bitch", phone: ["6280769570","7042533587"], email:["kaurman2305@gail.com", "blah@w.com"]}
     ]
 }
 
@@ -19,17 +19,25 @@ export const GlobalProvider = ({children}) => {
     //Actions
     function addContact(contact)
     {
-        console.log(contact);
         dispatch({
             type: 'ADD_CONTACT',
             payload: contact
+        })
+    }
+
+    function deleteContact(id)
+    {
+        dispatch({
+            type: 'DELETE_CONTACT',
+            payload: id
         })
     }
     
     return (
         <GlobalContext.Provider value={
             {contacts: state.contacts,
-            addContact
+            addContact,
+            deleteContact
             }
         }>
             {children}
