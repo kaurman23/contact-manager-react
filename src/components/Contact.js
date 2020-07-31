@@ -8,16 +8,16 @@ import {FcInvite} from 'react-icons/fc';
 
 
 
-export const Contact = () => {
+export const Contact = ({contact}) => {
 
     const [isExpand, setisExpand] = useState(false);
-
+    console.log(contact);
     
     return (
         <>
         <div className="contact">
             <div className="contact-heading">
-                <p>Manpreet Kaur</p>
+                <p>{contact.name}</p>
                 <i onClick={()=> setisExpand(!isExpand)} ><FcExpand /></i>
             </div>
 
@@ -31,14 +31,19 @@ export const Contact = () => {
                     </div>
                     <div className="contact-details">
                         <div className="contact-list">
-                            <p><FcPhone /> 6280769570</p>
-                            <p><FcPhone /> 6280769570</p>
-                            <p><FcPhone /> 6280769570</p>
+                            {
+                                contact.phone.map((phone,index)=> {
+                                    return <p key={index}><FcPhone /> {phone} </p>
+                                })
+                            }
                         </div>
                         <div className="email-list">
-                            <p><FcInvite /> kaurman2305@gmail.com</p>
-                            <p><FcInvite /> kaurman2305@gmail.com</p>
+                            {
+                                contact.email.map((email,index) => {
+                                    return <p key={index}><FcInvite /> {email}</p>
 
+                                })
+                            }
                         </div>
                     </div>
                     

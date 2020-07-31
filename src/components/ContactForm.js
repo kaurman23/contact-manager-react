@@ -27,7 +27,7 @@ export const ContactForm = (props) => {
                     <Form className="contact-form" >
                         <div>
                             <label><i ><FcBusinessman /></i> Name</label>
-                            <Field type='text' name="name" placeholder="eg. John"  className="input"
+                            <Field type='text' name="name" placeholder="eg. John"  className="input name"
                             />
                         </div>
                         <div>
