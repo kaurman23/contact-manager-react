@@ -1,11 +1,15 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Modal from "react-modal";
+import shortid from  'shortid';
 import {Formik, Form, Field, FieldArray} from "formik";
 import {FcPhone, FcInvite, FcBusinessman} from 'react-icons/fc';
 import { FaMinusCircle,FaPlusCircle } from "react-icons/fa";
+import {GlobalContext} from '../Context/GlobalState';
 
 Modal.setAppElement('#root');
 export const ContactForm = (props) => {
+
+    const {addContact}  = useContext(GlobalContext);
 
     const initialValues = {
         name: '',
@@ -14,7 +18,17 @@ export const ContactForm = (props) => {
     }
     
     const onSubmit = values => {
-        console.log(values);
+        
+
+        const newContact = {
+            id: shortid.generate(),
+            name: values.name,
+            phone: [...values.phone],
+            email: [...values.email]
+        }
+        // console.log(values);
+        addContact(newContact);
+
     }
 
  
@@ -35,7 +49,7 @@ export const ContactForm = (props) => {
                             <FieldArray  name="phone"  >
                                 {
                                     (fieldArrayProps) =>  {
-                                        console.log(fieldArrayProps)
+                                        
                                          const {push, remove, form} = fieldArrayProps
                                         const {values} = form
                                         const {phone} = values
@@ -64,7 +78,7 @@ export const ContactForm = (props) => {
                             <FieldArray  name="email"  >
                                 {
                                     (fieldArrayProps) =>  {
-                                        console.log(fieldArrayProps)
+                                        
                                          const {push, remove, form} = fieldArrayProps
                                         const {values} = form
                                         const {email} = values

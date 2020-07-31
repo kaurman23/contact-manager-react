@@ -1,22 +1,36 @@
 import React, {useReducer, createContext} from 'react';
-import {AppReducer} from "./AppReducer";
+import AppReducer from "./AppReducer";
 
 const initialState = {
     contacts: [
         {id: 1, name: "Manpreet Kaur", phone: ["6280769570","7042533587"], email:["kaurman2305@gail.com"]},
-        {id: 1, name: "Someone Singh", phone: ["6280769570",], email:["kaurman2305@gail.com","somone@yahoo.com"]},
-        {id: 1, name: "Guleria Bitch", phone: ["6280769570","7042533587"], email:["kaurman2305@gail.com", "blah@w.com"]}
+        {id: 2, name: "Someone Singh", phone: ["6280769570",], email:["kaurman2305@gail.com","somone@yahoo.com"]},
+        {id: 3, name: "Guleria Bitch", phone: ["6280769570","7042533587"], email:["kaurman2305@gail.com", "blah@w.com"]}
     ]
 }
+
 
 export const GlobalContext = createContext(initialState);
 
 export const GlobalProvider = ({children}) => {
 
     const [state, dispatch] = useReducer(AppReducer,initialState);
+    
+    //Actions
+    function addContact(contact)
+    {
+        console.log(contact);
+        dispatch({
+            type: 'ADD_CONTACT',
+            payload: contact
+        })
+    }
+    
     return (
         <GlobalContext.Provider value={
-            {contacts: state.contacts}
+            {contacts: state.contacts,
+            addContact
+            }
         }>
             {children}
         </GlobalContext.Provider>

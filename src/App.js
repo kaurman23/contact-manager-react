@@ -9,7 +9,7 @@ function App() {
     <div className="App">
     <GlobalProvider>
       <h1>Contact Manager</h1>
-      <Main />
+        <Main />
     </GlobalProvider>
     
     </div>

@@ -11,7 +11,7 @@ import {FcInvite} from 'react-icons/fc';
 export const Contact = ({contact}) => {
 
     const [isExpand, setisExpand] = useState(false);
-    console.log(contact);
+    // console.log(contact);
     
     return (
         <>
