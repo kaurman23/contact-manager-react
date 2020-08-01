@@ -27,6 +27,8 @@ export const Contact = ({contact},props) => {
         editContact(id); 
 
     }
+
+    
     
     return (
         <>

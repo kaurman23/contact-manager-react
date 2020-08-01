@@ -11,6 +11,8 @@ export const Main = () => {
     
     const [isModalOpen, setModelOpen] = useState(false);
 
+    contacts.sort((a, b) => (a.name > b.name) ? 1 : -1)
+
     return (
         <div className="main-container">
             <div className="utility">
