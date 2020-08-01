@@ -10,7 +10,13 @@ export default (state, action) => {
             return ({
                 ...state,
                 contacts: state.contacts.filter( (contact) => contact.id!==action.payload)
-            })  
+            }) 
+        case 'EDIT_CONTACT':
+            return ({
+                ...state,
+                toBeUpdated: state.contacts.filter((contact) => contact.id===action.payload)
+            }) 
+            
         default:
             console.log('here too')
             return state;

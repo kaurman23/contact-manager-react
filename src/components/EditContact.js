@@ -6,21 +6,21 @@ import {FcPhone, FcInvite, FcBusinessman} from 'react-icons/fc';
 import { FaMinusCircle,FaPlusCircle } from "react-icons/fa";
 import {GlobalContext} from '../Context/GlobalState';
 
+
 Modal.setAppElement('#root');
-export const ContactForm = (props) => {
+export const EditContact = (props) => {
 
-    const {addContact}  = useContext(GlobalContext);
-
+    const {addContact, toBeUpdated}  = useContext(GlobalContext);
+    console.log(toBeUpdated);
     
 
     const initialValues = {
-        name: '',
-        phone: [''],
-        email: [''],
-    }
+        name: toBeUpdated[0].name,
+        phone: [...toBeUpdated[0].phone],
+        email: [...toBeUpdated[0].email],
+    }  
 
-    
-    
+
     
     const onSubmit = values => {
         
@@ -30,8 +30,7 @@ export const ContactForm = (props) => {
             name: values.name,
             phone: [...values.phone],
             email: [...values.email]
-        }
-
+        }      
         // console.log(values);
         addContact(newContact);
 
@@ -40,7 +39,7 @@ export const ContactForm = (props) => {
  
     return (
         <Modal isOpen={props.open} onRequestClose={() => props.toggleModal(!props.open)} className="add-contact-modal">
-                <h2>ADD A CONTACT</h2>
+                <h2>EDIT A CONTACT</h2>
                 <Formik 
                     initialValues={initialValues}
                     onSubmit={onSubmit}>
@@ -108,7 +107,7 @@ export const ContactForm = (props) => {
                                 } 
                             </FieldArray>
                         </div>
-                        <button type="submit" className="submit-btn">ADD</button>
+                        <button type="submit" className="submit-btn">UPDATE</button>
                         
                     </Form>
                 </Formik>

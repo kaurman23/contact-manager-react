@@ -1,4 +1,5 @@
 import React, {useState, useContext} from 'react';
+import {EditContact} from "./EditContact";
 import {FcExpand} from 'react-icons/fc';
 import {FaEdit} from 'react-icons/fa'
 import {RiDeleteBin6Line} from 'react-icons/ri';
@@ -8,16 +9,23 @@ import {GlobalContext} from "../Context/GlobalState";
 
 
 
-export const Contact = ({contact}) => {
+export const Contact = ({contact},props) => {
 
-    const {deleteContact} = useContext(GlobalContext)
+    const { deleteContact, editContact} = useContext(GlobalContext)
 
     const [isExpand, setisExpand] = useState(false);
+    const [edit, setEdit] = useState(false);
     // console.log(contact);
 
     function deleteCont(id)
     {
         deleteContact(id);
+    }
+
+    function editCont(id)
+    {
+        editContact(id); 
+
     }
     
     return (
@@ -31,7 +39,7 @@ export const Contact = ({contact}) => {
             {isExpand && 
                 <div className="contact-content">
                     <div className="edit-btn">
-                        <span >Edit <FaEdit style={{color: "white"}} /> </span>
+                        <span onClick={ () => {editCont(`${contact.id}`); setEdit(true)}}>Edit <FaEdit style={{color: "white"}} /> </span>
                     </div>
                     <div className="delete-btn">
                         <span onClick={()=> deleteCont(`${contact.id}`)}>Delete <RiDeleteBin6Line style={{color: "white"}} /> </span>
@@ -57,7 +65,10 @@ export const Contact = ({contact}) => {
                     
                 </div>
              }  
+             {edit && <EditContact open={edit} toggleModal={setEdit} />}
         </div>
+
+       
        
         </>
     )

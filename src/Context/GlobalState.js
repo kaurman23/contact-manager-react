@@ -6,7 +6,8 @@ const initialState = {
         {id: '1', name: "Manpreet Kaur", phone: ["6280769570","7042533587"], email:["kaurman2305@gail.com"]},
         {id: '2', name: "Someone Singh", phone: ["6280769570",], email:["kaurman2305@gail.com","somone@yahoo.com"]},
         {id: '3', name: "Guleria Bitch", phone: ["6280769570","7042533587"], email:["kaurman2305@gail.com", "blah@w.com"]}
-    ]
+    ],
+    toBeUpdated: []
 }
 
 
@@ -32,12 +33,23 @@ export const GlobalProvider = ({children}) => {
             payload: id
         })
     }
+
+    function editContact(id)
+    {
+        dispatch({
+            type: 'EDIT_CONTACT',
+            payload: id
+        })
+    }
     
+
     return (
         <GlobalContext.Provider value={
             {contacts: state.contacts,
             addContact,
-            deleteContact
+            deleteContact, 
+            editContact,
+            toBeUpdated: state.toBeUpdated
             }
         }>
             {children}
