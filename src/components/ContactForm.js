@@ -10,8 +10,7 @@ Modal.setAppElement('#root');
 export const ContactForm = (props) => {
 
     const {addContact}  = useContext(GlobalContext);
-
-    
+       
 
     const initialValues = {
         name: '',
@@ -19,7 +18,6 @@ export const ContactForm = (props) => {
         email: [''],
     }
 
-    
     
     
     const onSubmit = values => {
