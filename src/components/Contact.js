@@ -1,10 +1,8 @@
 import React, {useState, useContext} from 'react';
 import {EditContact} from "./EditContact";
-import {FcExpand} from 'react-icons/fc';
+import {FcExpand,FcCollapse,FcPhone, FcInvite} from 'react-icons/fc';
 import {FaEdit} from 'react-icons/fa'
 import {RiDeleteBin6Line} from 'react-icons/ri';
-import {FcPhone} from 'react-icons/fc';
-import {FcInvite} from 'react-icons/fc';
 import {GlobalContext} from "../Context/GlobalState";
 
 
@@ -15,6 +13,7 @@ export const Contact = ({contact},props) => {
 
     const [isExpand, setisExpand] = useState(false);
     const [edit, setEdit] = useState(false);
+    const [id, setId] = useState('');
     // console.log(contact);
 
     function deleteCont(id)
@@ -25,6 +24,8 @@ export const Contact = ({contact},props) => {
     function editCont(id)
     {
         editContact(id); 
+        setId(id);
+        
 
     }
 
@@ -33,9 +34,12 @@ export const Contact = ({contact},props) => {
     return (
         <>
         <div className="contact">
-            <div className="contact-heading">
+            <div onClick={()=> setisExpand(!isExpand)} className="contact-heading">
                 <p>{contact.name}</p>
-                <i onClick={()=> setisExpand(!isExpand)} ><FcExpand /></i>
+                {
+                    isExpand? <i  ><FcCollapse /></i> : <i  ><FcExpand /></i>
+                }
+                
             </div>
 
             {isExpand && 
@@ -67,7 +71,7 @@ export const Contact = ({contact},props) => {
                     
                 </div>
              }  
-             {edit && <EditContact open={edit} toggleModal={setEdit} />}
+             {edit && <EditContact open={edit} toggleModal={setEdit}  id={id} />}
         </div>
 
        

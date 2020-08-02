@@ -15,7 +15,7 @@ export default (state, action) => {
             return ({
                 ...state,
                 toBeUpdated: state.contacts.filter((contact) => contact.id===action.payload),
-                contacts: state.contacts.filter( (contact) => contact.id!==action.payload)
+                // contacts: state.contacts.filter( (contact) => contact.id!==action.payload)
             }) 
             
         default:

@@ -10,7 +10,7 @@ import {GlobalContext} from '../Context/GlobalState';
 Modal.setAppElement('#root');
 export const EditContact = (props) => {
 
-    const {addContact, toBeUpdated}  = useContext(GlobalContext);
+    const {addContact,deleteContact, toBeUpdated}  = useContext(GlobalContext);
     
 
     const initialValues = {
@@ -32,6 +32,7 @@ export const EditContact = (props) => {
         }      
         // console.log(values);
         addContact(newContact);
+        deleteContact(props.id);
         props.toggleModal(!props.open);
 
     }

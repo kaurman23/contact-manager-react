@@ -32,6 +32,7 @@ export const ContactForm = (props) => {
 
         // console.log(values);
         addContact(newContact);
+        props.toggleModal(!props.open)
 
     }
 

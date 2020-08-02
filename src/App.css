@@ -162,15 +162,11 @@ body {
   padding: .5rem
 
 }
-.contact-details > div {
+.contact-details > div:first-of-type {
   /* flex: 1 1; */
   text-align: center;
 }
 
-.contact-list{
-}
-.email-list{
-}
 
 
 
