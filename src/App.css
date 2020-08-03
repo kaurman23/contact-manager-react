@@ -150,7 +150,7 @@ body {
   padding: 3px;
   color: white;
   text-align: center;
-  border-radius: 20px;;
+  border-radius: 20px;
 }
 .contact-details {
   grid-area: contact;
@@ -165,6 +165,26 @@ body {
 .contact-details > div:first-of-type {
   /* flex: 1 1; */
   text-align: center;
+}
+
+.edit-btn:hover {
+  
+  border: solix 1px green;
+  box-shadow: 0 0 10px green ;
+}
+
+.delete-btn:hover{
+  
+  border: solix 1px rgb(216, 25, 25);
+  box-shadow: 0 0 10px  rgb(216, 25, 25);
+}
+
+.delete-btn:active {
+  background-color: rgb(238, 113, 113);
+}
+
+.edit-btn:active{
+  background-color: #5cdb94;
 }
 
 
