@@ -22,7 +22,7 @@ export const ContactForm = (props) => {
     const validationSchema = Yup.object({
         name: Yup.string().required('This field is required'),
         phone: Yup.array().of( Yup.string().trim().required('This field is required').matches(/^[0-9]*$/,'Phone number should only contain numerics')),
-         email: Yup.array().of( Yup.string().trim().email('Invalid email').required('This field is required'))
+        email: Yup.array().of( Yup.string().trim().email('Invalid email').required('This field is required'))
 
     })
 
