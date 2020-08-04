@@ -69,7 +69,7 @@ export const EditContact = (props) => {
                                                         placeholder="6280769570"  />
                                                         <div className="addFieldBtns">
                                                             <span type="button" onClick={()=> push('')} ><FaPlusCircle style={ {color: "green"}}/></span>
-                                                            {index>0 && <span type="button" onClick={()=>remove(index)}><FaMinusCircle style={ {color: "red"}} /></span>}
+                                                            <span type="button" onClick={()=>remove(index)}><FaMinusCircle style={ {color: "red"}} /></span>
                                                         </div>
                                                     </div>)
                                                 )
@@ -98,7 +98,7 @@ export const EditContact = (props) => {
                                                         placeholder="email@domain.com"  />
                                                         <div className="addFieldBtns">
                                                             <span type="button" onClick={()=> push('')} ><FaPlusCircle style={ {color: "green"}}/></span>
-                                                            {index>0 && <span type="button" onClick={()=>remove(index)}><FaMinusCircle style={ {color: "red"}} /></span>}
+                                                            <span type="button" onClick={()=>remove(index)}><FaMinusCircle style={ {color: "red"}} /></span>
                                                         </div>
                                                     </div>)
                                                 )

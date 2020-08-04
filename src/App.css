@@ -304,6 +304,9 @@ body {
   .contact-content {
     font-size: 13px;
   }
+  .add-contact-modal {
+    margin: 10% 15%;
+  }
  
   
 }
@@ -319,6 +322,9 @@ body {
   .App h1 {
     font-size: 4rem;
     
+  }
+  .add-contact-modal {
+    margin: 10% 25%;
   }
 }
 
