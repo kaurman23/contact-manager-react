@@ -113,7 +113,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   padding: .7rem;
-  border-right: solid 5px #05396b;
+  border-left: solid 5px #05396b;
 }
 .contact-heading p {
   margin: 0;
@@ -287,6 +287,39 @@ body {
 
 .submit-btn:hover {
   transform: scale(1.1);
+}
+
+
+@media (min-width: 720px){
+  .utility{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .App {
+    margin: auto 10%;
+  }
+
+  .contact-content {
+    font-size: 13px;
+  }
+ 
+  
+}
+
+@media (min-width: 900px)
+{
+  .create {
+    margin-top: 0;
+  }
+  .App{
+    margin:auto 25%;
+  }
+  .App h1 {
+    font-size: 4rem;
+    
+  }
 }
 
 
