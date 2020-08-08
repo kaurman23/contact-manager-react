@@ -25,7 +25,7 @@
 
 ## :zap: Installation
 
-1. Clone / Download [this]https://github.com/kaurman23/react-expense-tracker) repo.
+1. Clone / Download [this]https://github.com/kaurman23/contact-manager-react) repo.
 2. Inside the project open a terminal and run:
     ```
     npm install
